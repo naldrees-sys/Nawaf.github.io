@@ -3,10 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Body Health </title>
+    <title>Body Health - حاسبة كتلة الجسم</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>مرحباً بكم في موقعي!</h1>
-    <p>هذا أول موقع أسويه وأنا أتعلم HTML و Git و GitHub.</p>
+
+    <div class="top-bar">
+        <button id="langToggle" class="lang-btn">English</button>
+    </div>
+
+    <div class="container">
+        <h1 id="title">Body Health</h1>
+        <p id="subtitle">احسب مؤشر كتلة جسمك (BMI)</p>
+
+        <div class="form-group">
+            <label id="genderLabel">الجنس</label>
+            <select id="gender">
+                <option id="maleOption" value="male">ذكر</option>
+                <option id="femaleOption" value="female">أنثى</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label id="weightLabel">الوزن (كجم)</label>
+            <input type="number" id="weight" placeholder="مثال: 70">
+        </div>
+
+        <div class="form-group">
+            <label id="heightLabel">الطول (سم)</label>
+            <input type="number" id="height" placeholder="مثال: 170">
+        </div>
+
+        <button id="calcBtn" class="calc-btn">احسب</button>
+
+        <div id="result" class="result-box hidden">
+            <p id="bmiValue"></p>
+            <p id="bmiCategory"></p>
+            <p id="idealWeight" class="extra-info"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>

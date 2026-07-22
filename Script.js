@@ -82,22 +82,20 @@ calcBtn.addEventListener('click', () => {
     let category = "";
     let resultClass = "";
 
-    // تصنيف BMI وتحديد اللون
     if (bmi < 18.5) {
         category = t.underweight;
-        resultClass = "result-warning";   // برتقالي
+        resultClass = "result-warning";
     } else if (bmi < 25) {
         category = t.normal;
-        resultClass = "result-normal";    // أخضر
+        resultClass = "result-normal";
     } else if (bmi < 30) {
         category = t.overweight;
-        resultClass = "result-warning";   // برتقالي
+        resultClass = "result-warning";
     } else {
         category = t.obesity;
-        resultClass = "result-danger";    // أحمر
+        resultClass = "result-danger";
     }
 
-    // حساب الوزن المثالي التقريبي حسب الجنس (معادلة تقريبية بسيطة)
     let idealWeight;
     if (gender === 'male') {
         idealWeight = 50 + 0.9 * (heightCm - 152);
@@ -114,7 +112,6 @@ calcBtn.addEventListener('click', () => {
 
     document.getElementById('idealWeight').textContent = t.idealWeightText + idealWeight + " " + (currentLang === 'ar' ? "كجم" : "kg");
 
-    // تنظيف وإضافة كلاس اللون
     resultBox.classList.remove('hidden', 'result-normal', 'result-warning', 'result-danger');
     resultBox.classList.add(resultClass);
 });
